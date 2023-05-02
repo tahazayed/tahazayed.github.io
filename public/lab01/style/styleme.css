@@ -1,0 +1,57 @@
+div.main {
+    background-color: rgb(89, 86, 71);
+    color: white;
+    margin: 0 auto;
+    padding: 2px;
+}
+
+h1,
+h2,
+h3 {
+    color: #9cf;
+    font-family: Arial, "Arial Black", Verdana, "Trebuchet MS", Georgia, Tahoma, "Courier New", "Times New Roman";
+}
+
+div>p>span {
+    color: rgb(193, 193, 29);
+    font-weight: bold;
+}
+
+li>a {
+    color: rgb(184, 80, 31);
+}
+
+li>span {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+
+li>a {
+    text-decoration: none;
+}
+
+li>a:hover {
+    text-decoration: underline;
+}
+
+li>h4 {
+    color: #cc8;
+}
+
+li>p {
+
+    padding-left: 50px;
+
+}
+
+li>p::first-letter {
+    font-size: 100%;
+}
+
+p::first-letter {
+    font-size: 125%;
+}
+
+#validators {
+    text-align: center;
+}
