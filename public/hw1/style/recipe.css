@@ -1,6 +1,6 @@
 body {
     background-color: #f0f0f0;
-    background-image: url(../images/silverware.jpg);
+    background-image: url("../images/silverware.jpg");
     background-attachment: fixed;
     color: #404040;
     font-size: 11pt;
