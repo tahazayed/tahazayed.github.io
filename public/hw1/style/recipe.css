@@ -65,3 +65,8 @@ em {
     font-style: normal;
     font-weight: bold;
 }
+
+.thick-hr{
+    margin-left: 2px;
+    margin-right: 2px;
+}
