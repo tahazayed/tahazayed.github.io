@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Nerdluv Sign-up Page" />
+    <title>Nerdluv Sign-up Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin">
+    <link rel="stylesheet" type="text/css" href="../public/lab02/main.css" />
+</head>
+
+<body>
+    <div class="main">
+        <form action="http://mumstudents.org/params.php" method="get" id="signupForm">
+            <fieldset>
+                <legend>New User Signup:</legend>
+                <div class="coloumn">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" maxlength="16" size="16" required autofocus /><br><br>
+                    <label for="geder">Gender:</label>
+                    <label for="gender" class="radio-label"><input type="radio" name="gender"
+                            value="Male" />Male</label><label for="gender" class="radio-label"><input type="radio"
+                            name="gender" value="Female" checked />Female</label><br><br>
+                    <label for="age">Age:</label>
+                    <input type="text" name="age" maxlength="2" size="6" required /><br><br>
+                    <label for="pesonalitytype">Pesonality type:</label>
+                    <input type="text" name="pesonalitytype" maxlength="4" size="6" required /> (<a
+                        href="https://www.humanmetrics.com/cgi-win/jtypes2.htm">Don't know your type?</a>) <br><br>
+                    <label for="favoriteos">Favorite OS:</label>
+                    <select name="favoriteos">
+                        <option>Linux</option>
+                        <option>Mac OS X</option>
+                        <option selected>Windows</option>
+                    </select><br><br>
+                    <label for="min">Seeking Age:</label>
+                    <input type="text" name="min" maxlength="2" size="6" placeholder="min" required />
+                    <input type="text" name="max" maxlength="2" size="6" placeholder="max" required /><br><br>
+                    <input type="submit" value="Sign Up">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <p class="footer">This page is for single nerds to meet and date each other! Type in <br>
+        your personal information and wait for the nerdly luv to begin!<br>
+        Thank you for using our site.</p>
+    
+    <p class="footer">Results and page (C) Copywight NerdLuv Inc.</p>
+    <div class="footer">
+        <a href="http://validator.w3.org/check/referer"><img
+                src="http://mumstudents.org/cs472/2014-09/images/w3c-html.png" alt="html validator" /></a>
+
+        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+            <img src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
+        </a>
+    </div>
+
+</body>
+
+</html>
