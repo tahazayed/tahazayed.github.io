@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Retrieve Grade" />
+    <title>Retrieve Grade</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin">
+    <link rel="stylesheet" type="text/css" href="../public/grades/style/grades.css" />
+</head>
+
+<body>
+    <div class="main">
+        <form action="http://mumstudents.org/params.php" method="get" id="gradeForm"
+            enctype="application/x-www-form-urlencoded">
+            <fieldset>
+                <legend class="light-border">Retrieve Grade:</legend>
+                <div class="coloumn">
+                    <label for="name">Student Name:</label>
+                    <input type="text" name="name" maxlength="16" size="16" required autofocus /><br><br>
+                    <label for="studendid">Student Id:</label>
+                    <input type="text" name="studendid" maxlength="6" size="6" required /><br><br>
+                    <label for="grade">Grade:</label>
+                    <select name="grade">
+                        <option>CS-401 Modern Programming Practices</option>
+                        <option>CS-473 Mobile Device Development</option>
+                        <option>CS-472 Web Programming</option>
+                        <option>CS-544 Enterprise Artchitecture</option>
+                        <option>CS-545 Web Application Architecture</option>
+                    </select><br><br>
+                    <label for="entry">Gender:</label>
+                    <label for="entry" class="radio-label"><input type="radio" name="entry" value="february-2023"
+                            checked />February 2023</label><label for="entry" class="radio-label"><input type="radio"
+                            name="entry" value="april-2023" />April 2023</label><br><br>
+                    <label for="honest" class="radio-label"><input type="checkbox" value="honest" required />I am not
+                        lying and really I only looking up their own grade.</label><br><br>
+                    <input type="submit" value="Get Grade" class="light-border">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="footer">
+        <p><a href="../index.html">
+                <img src="../public/lab02/images/back.jfif" alt="Back to front page" />Back to front page</a></p>
+
+        <div id="validators">
+            <a href="http://validator.w3.org/check/referer"><img
+                    src="http://mumstudents.org/cs472/2014-09/images/w3c-html.png" alt="html validator" /></a>
+
+            <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                <img src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>
