@@ -3,51 +3,34 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="description" content="Nerdluv Sign-up Page" />
-    <title>Nerdluv Sign-up Page</title>
+    <meta name="description" content="Task List" />
+    <title>Task List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="referrer" content="origin">
-    <link rel="stylesheet" type="text/css" href="../public/lab02/style/signup.css" />
+    <link rel="stylesheet" type="text/css" href="../public/tasklist/style/tasklist.css" />
+    <script src="../public/tasklist/scripts/tasklist.js" type="text/javascript"></script>
 </head>
 
-<body>
+<body onload="loadTasks();">
     <div class="main">
-        <form action="http://mumstudents.org/params.php" method="get" id="signupForm">
-            <fieldset>
-                <legend class="light-border"></legend>
-                <div class="coloumn">
-                    <label for="name">Name:</label>
-                    <input type="text" name="name" maxlength="16" size="16" required autofocus /><br><br>
-                    <label for="geder">Gender:</label>
-                    <label for="gender" class="radio-label"><input type="radio" name="gender"
-                            value="Male" />Male</label><label for="gender" class="radio-label"><input type="radio"
-                            name="gender" value="Female" checked />Female</label><br><br>
-                    <label for="age">Age:</label>
-                    <input type="text" name="age" maxlength="2" size="6" required /><br><br>
-                    <label for="pesonalitytype">Pesonality type:</label>
-                    <input type="text" name="pesonalitytype" maxlength="4" size="6" required /> (<a
-                        href="https://www.humanmetrics.com/cgi-win/jtypes2.htm">Don't know your type?</a>) <br><br>
-                    <label for="favoriteos">Favorite OS:</label>
-                    <select name="favoriteos">
-                        <option>Linux</option>
-                        <option>Mac OS X</option>
-                        <option selected>Windows</option>
-                    </select><br><br>
-                    <label for="min">Seeking Age:</label>
-                    <input type="text" name="min" maxlength="2" size="6" placeholder="min" required />
-                    <input type="text" name="max" maxlength="2" size="6" placeholder="max" required /><br><br>
-                    <input type="submit" value="Sign Up" class="light-border">
-                </div>
-            </fieldset>
-        </form>
+        <div class="row">
+            <h1 class="row">Task List</h1>
+        </div>
+        <div class="row">
+            <div class="column">
+                <label for="name">Task</label>
+                <input type="text" name="name" id="name" size="16" required autofocus /><br><br>
+                <button onclick="addTaskClicked();">Add Task</button>
+                <button onclick="clearTaskListClicked();">Clear Tasks</button>
+            </div>
+            <div class="column">
+                <label for="task-list">Task List</label>
+                <select name="task-list" id="task-list" size="5"></select> <br><br>
+            </div>
+        </div>
+
     </div>
     <div class="footer">
-        <p>This page is for single nerds to meet and date each other! Type in <br>
-            your personal information and wait for the nerdly luv to begin!<br>
-            Thank you for using our site.</p>
-
-        <p>Results and page (C) Copywight NerdLuv Inc.</p>
-
         <p><a href="../index.html">
                 <img src="../public/lab02/images/back.jfif" alt="Back to front page" />Back to front page</a></p>
 
