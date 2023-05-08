@@ -1,0 +1,43 @@
+body {
+	font-family: "Arial", "Helvetica", sans-serif;
+	font-size: 12pt;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+#header {
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+h1 {
+	font-size: 200%;
+	font-weight: normal;
+	font-style: italic;
+	font-family: "Impact", fantasy;
+}
+
+
+
+textarea {
+	font-family: monospace;
+	font-size: 12pt;
+	width: 500px;
+}
+
+label {
+   
+	clear: left; 
+}
+
+button{
+	display: block;
+	clear: left;
+	margin-bottom: 2px;
+}
+.italic {
+	font-style: italic;
+  }
+  div{
+	margin-bottom: 2px;
+  }
