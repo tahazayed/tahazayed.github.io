@@ -37,6 +37,7 @@ button {
 .column {
 	display: block;
 	clear: left;
+	margin-top: 10px;
 }
 
 .italic {
@@ -45,4 +46,8 @@ button {
 
 div {
 	margin-bottom: 2px;
+}
+
+#text-account-name {
+	text-transform: capitalize;
 }

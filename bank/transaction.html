@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bank Account Transaction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../public/images/favicon.ico" type="image/gif" rel="shortcut icon" />
+    <meta name="referrer" content="origin">
+    <link href="../public/bank/style/bank.css" type="text/css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js"
+        integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw=" crossorigin="anonymous"></script>
+    <script src="../public/bank/scripts/bankaccount.js" type="text/javascript"></script>
+    <script src="../public/bank/scripts/transactioncontroller.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+    <h1>Bank Account Transaction</h1>
+    <div>
+        <label for="select-account">Account Name:</label>
+        <select id="select-account">
+            <option value="-1" selected="true">-- Please select an account --</option>
+        </select><br><br>
+    </div>
+    <div>
+        <label for="text-amount">Amount:</label>
+        <input type="text" id="text-amount" required />
+    </div>
+    <div class="column">
+        <button id="button-submit" class="column" disabled>Submit</button>
+    </div>
+    <p><a href="./accountapplication.html">
+        <img src="../public/lab02/images/back.jfif" alt="Back to Account Application" />Back to Account Application</a></p>
+</body>
+
+</html>
