@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    const DEFAULT_INTERVAL = 100;
+    const DEFAULT_INTERVAL = 150;
 
     // set defaults
     let speed = DEFAULT_INTERVAL;
