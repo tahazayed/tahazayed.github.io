@@ -1,5 +1,5 @@
-$(document).ready(function(){
-    const DEFAULT_INTERVAL = 200;
+$(document).ready(function () {
+    const DEFAULT_INTERVAL = 100;
 
     // set defaults
     let speed = DEFAULT_INTERVAL;
@@ -10,57 +10,6 @@ $(document).ready(function(){
     let firstFrame = null;
     let frame = null;
 
-    // DOM elements
-    let textArea = document.getElementById("text-area");
-    let startBtn = document.getElementById("start");
-    let stopBtn = document.getElementById("stop");
-    let animation = document.getElementById("animation");
-    let speedBox = document.getElementById("turbo");
-    let fontSize = document.getElementById("fontsize");
-
-    // change animation
-    function changeAnimation() {
-        let allFrames = ANIMATIONS[animation.value];
-        frame = allFrames.split("=====\n");
-        frameLength = frame.length;
-        firstFrame = frame[0];
-        textArea.value = firstFrame;
-        index = 0;
-    }
-
-    // toggle turbo speed
-    function changeSpeed() {
-        speed = speedBox.checked ? 50 : DEFAULT_INTERVAL;
-        if (isRunning) {
-            startAnimation();
-        }
-    }
-
-    // change font-size in textarea by adding a predefined className
-    function changeSize() {
-        switch (fontSize.value) {
-            case "Tiny":
-                textArea.className = "tiny";
-                break;
-            case "Medium":
-                textArea.className = "medium";
-                break;
-            case "Large":
-                textArea.className = "large";
-                break;
-            case "Extra Large":
-                textArea.className = "xl";
-                break;
-            case "XXL":
-                textArea.className = "xxl";
-                break;
-            default:
-                textArea.className = "small";
-                break;
-        }
-    }
-
-    // start animation
     function startAnimation() {
         if (startInterval) {
             clearInterval(startInterval);
@@ -71,7 +20,7 @@ $(document).ready(function(){
             return;
         }
         startInterval = setInterval(function () {
-            textArea.value = frame[index++];
+            $("#text-area").val(frame[index++]);
             if (index === frameLength) {
                 index = 0;
             }
@@ -79,35 +28,79 @@ $(document).ready(function(){
         isRunning = true;
     }
 
-    // stop animation
     function stopAnimation() {
         if (!startInterval) {
             return;
         }
         clearInterval(startInterval);
-        textArea.value = firstFrame;
+        $("#text-area").val(firstFrame);
         isRunning = false;
     }
 
-    // start on click
-    function onStart() {
-        startBtn.disabled = true;
-        stopBtn.disabled = false;
+    $("#button-start").on("click", function () {
+        $(this).prop("disabled", true);
+        $("#button-stop").prop("disabled", false);
         startAnimation();
-    }
+    });
 
-    // stop on click
-    function onStop() {
-        startBtn.disabled = false;
-        stopBtn.disabled = true;
+    $("#button-stop").on("click", function () {
+        $("#button-start").prop("disabled", false);
+        $(this).prop("disabled", true);
         index = 0;
         stopAnimation();
-    }
+    });
 
-    startBtn.onclick = onStart;
-    stopBtn.onclick = onStop;
-    animation.onchange = changeAnimation;
-    speedBox.onchange = changeSpeed;
-    fontSize.onchange = changeSize;
+    $("#select-animation").on("change", function () {
+        let allFrames = ANIMATIONS[$(this).val()];
+        frame = allFrames.split("=====\n");
+        frameLength = frame.length;
+        firstFrame = frame[0];
+        $("#text-area").val(firstFrame);
+        index = 0;
+        if (isRunning) {
+            stopAnimation();
+            startAnimation();
+        }
+    });
+
+
+    $("#checkbox-turbo").on("change", function () {
+        speed = $(this).prop("checked") ? DEFAULT_INTERVAL * 0.5 : DEFAULT_INTERVAL;
+        if (isRunning) {
+            stopAnimation();
+            startAnimation();
+        }
+    });
+
+    // change font-size in textarea by adding a predefined className
+    $("#select-fontsize").on("change", function () {
+        switch ($(this).val()) {
+            case "Tiny":
+                $("#text-area").prop('class', "tiny");
+                break;
+            case "Medium":
+                $("#text-area").prop('class', "medium");
+                break;
+            case "Large":
+                $("#text-area").prop('class', "large");
+                break;
+            case "Extra Large":
+                $("#text-area").prop('class', "xl");
+                break;
+            case "XXL":
+                $("#text-area").prop('class', "xxl");
+                break;
+            default:
+                $("#text-area").prop('class', "small");
+                break;
+        }
+        if (isRunning) {
+            stopAnimation();
+            startAnimation();
+        }
+    });
+
+
+
 
 });
