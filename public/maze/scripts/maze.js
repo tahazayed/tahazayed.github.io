@@ -16,7 +16,7 @@ $(document).ready(function () {
 
     $('#end').on("mouseover", () => {
         if (!lost && startClicked) {
-            $('#status').text("You Win");
+            $('#status').text("You Win :]");
             startClicked = false;
         }
     })
@@ -32,6 +32,6 @@ $(document).ready(function () {
 function youLose() {
     $('.boundary').addClass("youlose")
     lost = true;
-    $('#status').text("Sorry, you lose");
+    $('#status').text("Sorry, you lost. :[");
     startClicked = false;
 }
