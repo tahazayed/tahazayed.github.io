@@ -11,7 +11,7 @@ function getPicture() {
             api_key: "DEMO_KEY",
             date: $("#date").val()
         },
-        dataType: json,
+        dataType: "json",
         "success": showPicture,
         "error": noPicture
     });
