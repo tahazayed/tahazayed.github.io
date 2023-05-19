@@ -1,27 +1,32 @@
-$(document).ready(
-    function () {
-        $("#view_button").click(getPicture);
-    });
+window.onload = function () {
+    const viewButton = document.getElementById("view_button");
+    viewButton.onclick = getPicture;
 
-function getPicture() {
-    $.ajax({
-        url: "https://api.nasa.gov/planetary/apod",
-        type: "GET",
-        data: {
+    function getPicture() {
+
+        // encode to scape spaces
+        const esc = encodeURIComponent;
+        const url = 'https://api.nasa.gov/planetary/apod?';
+        const params = {
             api_key: "HAI8yceW0yUSWNtQv938yAgC5EyMB10w2iK6hyNx",
             date: $("#date").val()
-        },
-        dataType: "json",
-        "success": showPicture,
-        "error": noPicture
-    });
-};
+        }
+        // this line takes the params object and builds the query string
+        const query = Object.keys(params).map(k => `${esc(k)}=${esc(params[k])}`).join('&');
+        fetch(url + query)
+            .then(response => response.json())
+            .then(data => showPicture(data))
+            .catch(err => noPicture());
+    }
 
-function showPicture(data) {
-    $("#pic").attr("src", data.url);
-    $("h2.title").text(data.title);
-};
+    function showPicture(data) {
+        const picDom = document.getElementById('pic');
+        picDom.src = data.url;
+        const titleDom = document.getElementById('title');
+        titleDom.innerText = data.title;
+    }
 
-function noPicture(error) {
-    alert(error.responseText);
-};
+    function noPicture(error) {
+        alert(error);
+    }
+}
